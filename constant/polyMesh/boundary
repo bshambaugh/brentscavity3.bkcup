@@ -1,0 +1,82 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+10
+(
+    inletFace
+    {
+        type            patch;
+        nFaces          11;
+        startFace       101437;
+    }
+    inletWall
+    {
+        type            wall;
+        nFaces          194;
+        startFace       101448;
+    }
+    inletsourceFace
+    {
+        type            patch;
+        nFaces          1067;
+        startFace       101642;
+    }
+    inletdestinationFace
+    {
+        type            patch;
+        nFaces          1067;
+        startFace       102709;
+    }
+    fineMeshWall
+    {
+        type            wall;
+        nFaces          89;
+        startFace       103776;
+    }
+    fineMeshSourceFace
+    {
+        type            patch;
+        nFaces          50000;
+        startFace       103865;
+    }
+    fineMeshdestinationFace
+    {
+        type            patch;
+        nFaces          50000;
+        startFace       153865;
+    }
+    fineMeshSymmetryWall
+    {
+        type            symmetryPlane;
+        nFaces          500;
+        startFace       203865;
+    }
+    fineMeshOutletLeft
+    {
+        type            patch;
+        nFaces          500;
+        startFace       204365;
+    }
+    fineMeshOutletBottom
+    {
+        type            patch;
+        nFaces          100;
+        startFace       204865;
+    }
+)
+
+// ************************************************************************* //

@@ -1,0 +1,82 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0.0005";
+    object      nut;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -1 0 0 0 0];
+
+internalField   uniform 5.68694e-05;
+
+boundaryField
+{
+    inletFace
+    {
+        type            calculated;
+        value           uniform 5.68694e-05;
+    }
+    inletWall
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    inletsourceFace
+    {
+        type            calculated;
+        value           uniform 5.68694e-05;
+    }
+    inletdestinationFace
+    {
+        type            calculated;
+        value           uniform 5.68694e-05;
+    }
+    fineMeshWall
+    {
+        type            nutkWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        value           uniform 0;
+    }
+    fineMeshSourceFace
+    {
+        type            calculated;
+        value           uniform 5.68694e-05;
+    }
+    fineMeshdestinationFace
+    {
+        type            calculated;
+        value           uniform 5.68694e-05;
+    }
+    fineMeshSymmetryWall
+    {
+        type            symmetryPlane;
+    }
+    fineMeshOutletLeft
+    {
+        type            calculated;
+        value           uniform 1.8144e+15;
+    }
+    fineMeshOutletBottom
+    {
+        type            calculated;
+        value           uniform 5.68694e-05;
+    }
+}
+
+
+// ************************************************************************* //
